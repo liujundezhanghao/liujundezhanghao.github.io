@@ -4,7 +4,7 @@
 $(document).ready(function () {
   var algoliaSettings = CONFIG.algolia;
   console.log(algoliaSettings);
-  var isAlgoliaSettingsValid = algoliaSettings.appId &&
+  var isAlgoliaSettingsValid = (algoliaSettings.appId || algoliaSettings.applicationID) &&
                                algoliaSettings.apiKey &&
                                algoliaSettings.indexName;
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
   }
 
   var search = instantsearch({
-    appId: algoliaSettings.appId,
+    appId: algoliaSettings.appId ? algoliaSettings.appId : algoliaSettings.applicationID,
     apiKey: algoliaSettings.apiKey,
     indexName: algoliaSettings.indexName,
     searchFunction: function (helper) {
