@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
   var algoliaSettings = CONFIG.algolia;
-  console(algoliaSettings);
+  console.log(algoliaSettings);
   var isAlgoliaSettingsValid = algoliaSettings.appId &&
                                algoliaSettings.apiKey &&
                                algoliaSettings.indexName;
